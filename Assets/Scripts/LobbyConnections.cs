@@ -1,84 +1,68 @@
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 using UnityEngine;
 
 public class LobbyConnections : MonoBehaviourPunCallbacks
 {
-    private bool connected = false;
-    private RoomOptions roomOptions;
+    [SerializeField] private TMP_InputField usernameInput;
 
-    void Start()
+    private void Start()
     {
+        PhotonNetwork.AutomaticallySyncScene = false;
+        Debug.Log("Connecting to Photon...");
         PhotonNetwork.ConnectUsingSettings();
     }
 
     public override void OnConnectedToMaster()
     {
-        Debug.Log("OnConnectedToMaster() was called by PUN.");
-        connected = true;
-
-        roomOptions = new RoomOptions
-        {
-            IsVisible = false,
-            MaxPlayers = 4
-        };
-
-        PhotonNetwork.JoinOrCreateRoom("sapeLoquita", roomOptions, TypedLobby.Default);
+        Debug.Log("Callback: Connected to Master Server.");
     }
+
+    public override void OnConnected()
+    {
+        Debug.Log("Callback: Connected to NameServer.");
+    }
+
     public override void OnDisconnected(DisconnectCause cause)
     {
-        Debug.LogWarning("Desconectado de Photon. Motivo: " + cause);
-
-        Invoke("Reconnect", 3f);
-    }
-    private void Reconnect()
-    {
-        if (!PhotonNetwork.IsConnected)
-        {
-            Debug.Log("Reintentando conexión a Photon...");
-            PhotonNetwork.ConnectUsingSettings();
-        }
+        Debug.LogError("Disconnected from Photon: " + cause);
     }
 
-    public void CreateRoom()
+    public void OnConnectButton()
     {
-        if (!connected || !PhotonNetwork.IsConnectedAndReady)
-        {
-            Debug.LogWarning("Photon no está listo aún.");
-            return;
-        }
+        PhotonNetwork.NickName = string.IsNullOrEmpty(usernameInput.text)
+            ? "Player" + Random.Range(1000, 9999)
+            : usernameInput.text;
 
-        roomOptions = new RoomOptions
+        if (PhotonNetwork.IsConnectedAndReady)
         {
-            IsVisible = false,
-            MaxPlayers = 4
-        };
-
-        if (PhotonNetwork.InRoom)
-            PhotonNetwork.LeaveRoom();
-        else
             JoinOrCreateRoom();
+        }
+        else
+        {
+            Debug.Log("Still connecting...");
+        }
     }
 
-    public void LeaveRoom()
+    void JoinOrCreateRoom()
     {
-        if (PhotonNetwork.InRoom)
-            PhotonNetwork.LeaveRoom();
-    }
-
-    public override void OnLeftRoom()
-    {
-        base.OnLeftRoom();
-        Debug.Log("Te fuiste de la room.");
-    }
-
-    private void JoinOrCreateRoom()
-    {
-        PhotonNetwork.JoinOrCreateRoom("sapeLoquita", roomOptions, TypedLobby.Default);
+        RoomOptions options = new RoomOptions { MaxPlayers = 4 };
+        PhotonNetwork.JoinOrCreateRoom("DefaultRoom", options, TypedLobby.Default);
+        Debug.Log("Joining/Creating room...");
     }
 
     public override void OnJoinedRoom()
     {
         Debug.Log("Joined Room: " + PhotonNetwork.CurrentRoom.Name);
+
+        ServiceLocator.Instance.AccessService<UIPagesService>().ChangePage("room_lobby");
+    }
+
+    public override void OnLeftRoom()
+    {
+        Debug.Log("Left Room");
+
+        ServiceLocator.Instance.AccessService<UIPagesService>().ChangePage("enter_room");
     }
 }
