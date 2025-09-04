@@ -16,7 +16,7 @@ public class CharacterSelection : MonoBehaviour
 
     private void Awake()
     {
-        SetCharacter(0);
+        SetCharacter(PlayerPrefs.GetInt("Character"));
     }
 
     private void OnEnable()

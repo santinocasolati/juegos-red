@@ -12,6 +12,7 @@ public class LobbyConnections : MonoBehaviourPunCallbacks
     private void Start()
     {
         PhotonNetwork.AutomaticallySyncScene = false;
+        usernameInput.text = PlayerPrefs.GetString("Username");
     }
 
     public override void OnConnectedToMaster()
