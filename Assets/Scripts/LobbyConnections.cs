@@ -42,6 +42,11 @@ public class LobbyConnections : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
     }
 
+    public void OnDisconnectButton()
+    {
+        PhotonNetwork.Disconnect();
+    }
+
     private void JoinOrCreateRoom()
     {
         RoomOptions options = new RoomOptions { MaxPlayers = 4 };
