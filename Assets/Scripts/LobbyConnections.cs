@@ -1,3 +1,4 @@
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
@@ -6,6 +7,7 @@ using UnityEngine;
 public class LobbyConnections : MonoBehaviourPunCallbacks
 {
     [SerializeField] private TMP_InputField usernameInput;
+    [SerializeField] private CharacterSelection characterSelection;
 
     private void Start()
     {
@@ -26,9 +28,15 @@ public class LobbyConnections : MonoBehaviourPunCallbacks
 
     public void OnConnectButton()
     {
-        PhotonNetwork.NickName = string.IsNullOrEmpty(usernameInput.text)
-            ? "Player" + Random.Range(1000, 9999)
-            : usernameInput.text;
+        if (string.IsNullOrEmpty(usernameInput.text)) return;
+
+        PhotonNetwork.NickName = usernameInput.text;
+        PlayerPrefs.SetString("Username", usernameInput.text);
+
+        int characterIndex = characterSelection.CurrentIndex;
+        var props = new Hashtable { { "characterIndex", characterIndex } };
+        PhotonNetwork.LocalPlayer.SetCustomProperties(props);
+        PlayerPrefs.SetInt("Character", characterIndex);
 
         Debug.Log("Connecting to Photon...");
         PhotonNetwork.ConnectUsingSettings();

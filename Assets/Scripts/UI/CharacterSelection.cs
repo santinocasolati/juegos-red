@@ -12,6 +12,8 @@ public class CharacterSelection : MonoBehaviour
 
     private int currentIndex = 0;
 
+    public int CurrentIndex { get { return currentIndex; } }
+
     private void Awake()
     {
         SetCharacter(0);

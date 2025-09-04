@@ -30,7 +30,7 @@ public class PlayerListManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        base.OnPlayerLeftRoom(newPlayer);
+        base.OnPlayerEnteredRoom(newPlayer);
         RefreshPlayerList();
     }
 
