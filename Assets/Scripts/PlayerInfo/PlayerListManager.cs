@@ -31,6 +31,7 @@ public class PlayerListManager : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         base.OnPlayerEnteredRoom(newPlayer);
+        Debug.Log($"{newPlayer.UserId} connected");
         RefreshPlayerList();
     }
 
