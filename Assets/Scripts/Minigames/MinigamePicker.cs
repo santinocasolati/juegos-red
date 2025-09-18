@@ -47,6 +47,7 @@ public class MinigamePicker : MonoBehaviourPun
             }
 
             segment.transform.localRotation = Quaternion.Euler(0, 0, -i * angleStep);
+            segment.transform.GetChild(0).localRotation = Quaternion.Euler(0, 0, 45 * (count - 1));
             segment.GetComponent<WheelSegmentController>().SetData(minigame.icon);
         }
     }
@@ -78,7 +79,9 @@ public class MinigamePicker : MonoBehaviourPun
         float anglePerSegment = 360f / segmentCount;
         float startRotation = wheel.eulerAngles.z;
 
-        float endRotation = startRotation + (360f * extraSpins) + (targetIndex * anglePerSegment) / 2;
+        float segmentCenterOffset = anglePerSegment / 2f;
+
+        float endRotation = startRotation + (360f * extraSpins) + (targetIndex * anglePerSegment) - segmentCenterOffset - 90f;
 
         float elapsed = 0f;
 
@@ -86,12 +89,9 @@ public class MinigamePicker : MonoBehaviourPun
         {
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
-
             float easedT = 1f - Mathf.Pow(1f - t, 3);
-
             float z = Mathf.Lerp(startRotation, endRotation, easedT);
             wheel.eulerAngles = new Vector3(0, 0, z);
-
             yield return null;
         }
 
@@ -99,7 +99,6 @@ public class MinigamePicker : MonoBehaviourPun
         spinning = false;
 
         MinigameSO selectedMinigame = minigameCatalog.minigames[targetIndex];
-
         selectedNotification.SetData(selectedMinigame.icon);
         selectedNotification.transform.parent.gameObject.SetActive(true);
 
@@ -107,4 +106,5 @@ public class MinigamePicker : MonoBehaviourPun
 
         PhotonNetwork.LoadLevel(selectedMinigame.scene);
     }
+
 }
