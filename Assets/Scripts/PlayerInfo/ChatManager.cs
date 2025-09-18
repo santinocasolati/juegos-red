@@ -14,12 +14,12 @@ public class ChatManager : MonoBehaviourPunCallbacks
     {
         if (string.IsNullOrEmpty(chatInput.text)) return;
 
-        photonView.RPC("ReceiveMessage", RpcTarget.All, PhotonNetwork.NickName, chatInput.text, PhotonNetwork.LocalPlayer.ActorNumber);
+        photonView.RPC("RPC_ReceiveMessage", RpcTarget.All, PhotonNetwork.NickName, chatInput.text, PhotonNetwork.LocalPlayer.ActorNumber);
         chatInput.text = "";
     }
 
     [PunRPC]
-    public void ReceiveMessage(string sender, string message, int senderId)
+    public void RPC_ReceiveMessage(string sender, string message, int senderId)
     {
         GameObject msgObj = Instantiate(chatMessagePrefab, chatContentParent);
         ChatMessageUI msgUI = msgObj.GetComponent<ChatMessageUI>();

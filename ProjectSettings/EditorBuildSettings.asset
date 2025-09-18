@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
+    path: Assets/Scenes/MiniGameSelector.unity
+    guid: eaec0f3a33d574c4db0d718f71e61afa
+  - enabled: 1
+    path: Assets/Scenes/FloorIsWater.unity
     guid: 731a5c69d291b6344b38748fe9164bde
   m_configObjects: {}
