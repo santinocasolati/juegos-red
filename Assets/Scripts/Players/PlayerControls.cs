@@ -23,6 +23,8 @@ public class PlayerControls : MonoBehaviourPun
     private float verticalVelocity;
     private bool isGrounded = true;
 
+    public bool canMove = false;
+
     private PlayerInputActions inputs;
 
     private void Awake()
@@ -56,6 +58,7 @@ public class PlayerControls : MonoBehaviourPun
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
 
+            if (!canMove) return;
             HandleMovement();
             HandleFlip();
         }
@@ -89,6 +92,7 @@ public class PlayerControls : MonoBehaviourPun
     public void OnJump(InputAction.CallbackContext context)
     {
         if (!photonView.IsMine) return;
+        if (!canMove) return;
 
         if (context.performed && isGrounded)
         {
