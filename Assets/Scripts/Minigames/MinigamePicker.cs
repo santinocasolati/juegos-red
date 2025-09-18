@@ -78,7 +78,7 @@ public class MinigamePicker : MonoBehaviourPun
         float anglePerSegment = 360f / segmentCount;
         float startRotation = wheel.eulerAngles.z;
 
-        float endRotation = startRotation + (360f * extraSpins) + (targetIndex * anglePerSegment);
+        float endRotation = startRotation + (360f * extraSpins) + (targetIndex * anglePerSegment) / 2;
 
         float elapsed = 0f;
 
