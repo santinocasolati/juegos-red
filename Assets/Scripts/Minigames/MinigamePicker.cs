@@ -47,7 +47,7 @@ public class MinigamePicker : MonoBehaviourPun
             }
 
             segment.transform.localRotation = Quaternion.Euler(0, 0, -i * angleStep);
-            segment.GetComponent<WheelSegmentController>().SetData(minigame.icon, minigame.displayName);
+            segment.GetComponent<WheelSegmentController>().SetData(minigame.icon);
         }
     }
 
@@ -100,7 +100,7 @@ public class MinigamePicker : MonoBehaviourPun
 
         MinigameSO selectedMinigame = minigameCatalog.minigames[targetIndex];
 
-        selectedNotification.SetData(selectedMinigame.icon, selectedMinigame.displayName);
+        selectedNotification.SetData(selectedMinigame.icon);
         selectedNotification.transform.parent.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(1);

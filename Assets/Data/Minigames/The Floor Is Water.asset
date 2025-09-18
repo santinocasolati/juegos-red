@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: The Floor Is Water
   m_EditorClassIdentifier: 
   displayName: The Floor Is Water
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 10e29765c13a86247989e81e385d7f99, type: 3}
   scene: FloorIsWater

@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class WheelSegmentController : MonoBehaviour
 {
     [SerializeField] private Image img;
-    [SerializeField] private TMP_Text label;
     [SerializeField] private bool usesAnimation;
 
     private void OnEnable()
@@ -19,10 +18,9 @@ public class WheelSegmentController : MonoBehaviour
         StartCoroutine(OpenAnimation());
     }
 
-    public void SetData(Sprite icon, string text)
+    public void SetData(Sprite icon)
     {
         img.sprite = icon;
-        label.text = text;
     }
 
     private IEnumerator OpenAnimation()
