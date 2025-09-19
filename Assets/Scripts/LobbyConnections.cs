@@ -9,6 +9,7 @@ public class LobbyConnections : MonoBehaviourPunCallbacks
     [SerializeField] private TMP_InputField usernameInput;
     [SerializeField] private CharacterSelection characterSelection;
     [SerializeField] private string sceneToLoad;
+    [SerializeField] private GameObject loadingScreen;
 
     private void Start()
     {
@@ -31,6 +32,8 @@ public class LobbyConnections : MonoBehaviourPunCallbacks
     public void OnConnectButton()
     {
         if (string.IsNullOrEmpty(usernameInput.text)) return;
+
+        loadingScreen.SetActive(true);
 
         PhotonNetwork.NickName = usernameInput.text;
         PlayerPrefs.SetString("Username", usernameInput.text);
@@ -62,6 +65,7 @@ public class LobbyConnections : MonoBehaviourPunCallbacks
         Debug.Log("Joined Room: " + PhotonNetwork.CurrentRoom.Name);
 
         ServiceLocator.Instance.AccessService<UIPagesService>().ChangePage("room_lobby");
+        loadingScreen.SetActive(false);
     }
 
     public override void OnLeftRoom()
