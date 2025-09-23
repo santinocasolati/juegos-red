@@ -14,6 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigames:
   - {fileID: 11400000, guid: ff451e4166f6b3648af911c6445fbde8, type: 2}
-  - {fileID: 11400000, guid: e0d196c0119799844b12a6ad12d665c2, type: 2}
-  - {fileID: 11400000, guid: afec00d9ba0e4314a9474afc0771dc9b, type: 2}
-  - {fileID: 11400000, guid: 72d49814740ced9439549ca6d3eca45f, type: 2}

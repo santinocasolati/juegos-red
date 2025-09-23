@@ -1,8 +1,11 @@
 using Photon.Pun;
+using Photon.Realtime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
@@ -10,7 +13,10 @@ public class GameManager : MonoBehaviourPunCallbacks
     [SerializeField] private TMP_Text countdownText;
     [SerializeField] private List<Transform> spawnPoints;
 
-    private List<GameObject> playerInstances = new();
+    protected List<GameObject> playerInstances = new();
+
+    public UnityEvent OnStart;
+    public UnityEvent OnEnd;
 
     private void Start()
     {
@@ -43,10 +49,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         countdownText.transform.parent.gameObject.SetActive(false);
 
-        foreach (GameObject player in playerInstances)
-        {
-            player.GetComponent<PlayerControls>().canMove = true;
-        }
+        StartGame();
     }
 
     private IEnumerator ShowText(string text)
@@ -70,5 +73,30 @@ public class GameManager : MonoBehaviourPunCallbacks
 
             yield return null;
         }
+    }
+
+    protected virtual void StartGame()
+    {
+        foreach (GameObject player in playerInstances)
+        {
+            player.GetComponent<PlayerControls>().canMove = true;
+        }
+
+        OnStart?.Invoke();
+    }
+    protected virtual void StopGame()
+    {
+        foreach (GameObject player in playerInstances)
+        {
+            player.GetComponent<PlayerControls>().canMove = false;
+        }
+
+        OnEnd?.Invoke();
+    }
+
+    [PunRPC]
+    private void AnnounceWinner(Player winner)
+    {
+        StopGame();
     }
 }
