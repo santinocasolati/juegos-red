@@ -100,6 +100,7 @@ public class LobbyConnections : MonoBehaviourPunCallbacks
             }
         }
 
+        GameData.Instance.InitializeScores();
         PhotonNetwork.LoadLevel(sceneToLoad);
     }
 }

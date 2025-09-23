@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGameSelector.unity
     guid: eaec0f3a33d574c4db0d718f71e61afa
   - enabled: 1
+    path: Assets/Scenes/Scoring.unity
+    guid: 6d2cfd96c29fa2d4dab9ad32ef636f76
+  - enabled: 1
     path: Assets/Scenes/FloorIsWater.unity
     guid: 731a5c69d291b6344b38748fe9164bde
   m_configObjects: {}

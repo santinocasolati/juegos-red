@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     [SerializeField] private string playerPrefabName;
     [SerializeField] private TMP_Text countdownText;
     [SerializeField] private List<Transform> spawnPoints;
+    [SerializeField] private string scoringScene = "Scoring";
 
     protected List<GameObject> playerInstances = new();
 
@@ -98,5 +99,9 @@ public class GameManager : MonoBehaviourPunCallbacks
     private void AnnounceWinner(Player winner)
     {
         StopGame();
+
+        GameData.Instance.AddScore(winner, 1);
+
+        PhotonNetwork.LoadLevel(scoringScene);
     }
 }
