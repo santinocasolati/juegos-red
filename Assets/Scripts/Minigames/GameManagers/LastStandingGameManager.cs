@@ -29,7 +29,7 @@ public class LastStandingGameManager : GameManager
 
         if (!PhotonNetwork.IsMasterClient) return;
 
-        if (alivePlayers.Count == 1)
+        if (alivePlayers.Count <= 1)
         {
             photonView.RPC("AnnounceWinner", RpcTarget.All, alivePlayers[0]);
         }

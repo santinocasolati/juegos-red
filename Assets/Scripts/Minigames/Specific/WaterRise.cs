@@ -29,4 +29,14 @@ public class WaterRise : MonoBehaviourPun
         transform.Translate(Vector2.up * speed * Time.deltaTime);
         speed += acceleration * Time.deltaTime;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!started) return;
+
+        if (collision.gameObject.TryGetComponent(out PlayersHealth health))
+        {
+            health.Damage(1);
+        }
+    }
 }

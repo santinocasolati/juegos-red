@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 7349917480271311906}
   - component: {fileID: 3166252778345147814}
   - component: {fileID: -3669875646603230195}
+  - component: {fileID: 5850384916038595694}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -433,6 +434,22 @@ MonoBehaviour:
   m_SynchronizeRotation: 0
   m_SynchronizeScale: 1
   m_UseLocal: 1
+--- !u!70 &5850384916038595694
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3053684919359764461}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
 --- !u!1 &3053684919420156523
 GameObject:
   m_ObjectHideFlags: 0
