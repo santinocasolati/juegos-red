@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     [SerializeField] private string scoringScene = "Scoring";
 
     protected List<GameObject> playerInstances = new();
+    protected bool gameStarted = false;
 
     public UnityEvent OnStart;
     public UnityEvent OnEnd;
@@ -78,6 +79,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     protected virtual void StartGame()
     {
+        gameStarted = true;
         foreach (GameObject player in playerInstances)
         {
             player.GetComponent<PlayerControls>().canMove = true;
@@ -87,6 +89,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     protected virtual void StopGame()
     {
+        gameStarted = false;
         foreach (GameObject player in playerInstances)
         {
             player.GetComponent<PlayerControls>().canMove = false;

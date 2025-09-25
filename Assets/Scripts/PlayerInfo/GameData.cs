@@ -2,11 +2,14 @@ using Photon.Pun;
 using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameData : MonoBehaviourPun
 {
     public static GameData Instance;
+
+    [SerializeField] private int pointsToWin = 3;
 
     private Dictionary<Player, int> scores = new Dictionary<Player, int>();
 
@@ -50,5 +53,15 @@ public class GameData : MonoBehaviourPun
     public Dictionary<Player, int> GetAllScores()
     {
         return new Dictionary<Player, int>(scores);
+    }
+
+    public bool CheckWin()
+    {
+        return scores.Where(kvp => kvp.Value >= pointsToWin).ToList().Count > 0;
+    }
+
+    public Player GetWinner()
+    {
+        return scores.Where(kvp => kvp.Value >= pointsToWin).ToList()[0].Key;
     }
 }

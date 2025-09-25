@@ -25,6 +25,8 @@ public class LastStandingGameManager : GameManager
 
     public void PlayerDied(Player player)
     {
+        if (!gameStarted) return;
+
         alivePlayers.Remove(player);
 
         if (!PhotonNetwork.IsMasterClient) return;
