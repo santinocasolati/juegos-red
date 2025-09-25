@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public struct DisplayFrames
+{
+    public Sprite[] sprites;
+}
+
 public class CharacterSelection : MonoBehaviour
 {
-    [SerializeField] private List<Sprite> characterSprites;
-    [SerializeField] private Image characterImg;
+    [SerializeField] private List<DisplayFrames> characterSprites;
+    [SerializeField] private UISpriteAnimator characterImg;
     [SerializeField] private Button prevBtn;
     [SerializeField] private Button nextBtn;
 
@@ -40,7 +46,7 @@ public class CharacterSelection : MonoBehaviour
         else if (updatedIndex < 0)
             updatedIndex = characterSprites.Count - 1;
 
-        characterImg.sprite = characterSprites[updatedIndex];
+        characterImg.frames = characterSprites[updatedIndex].sprites;
 
         currentIndex = updatedIndex;
     }

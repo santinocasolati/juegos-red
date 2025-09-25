@@ -1,12 +1,16 @@
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerListManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private Transform playerListParent;
     [SerializeField] private GameObject playerEntryPrefab;
+
+    private Dictionary<Player, PlayerListEntryUI> playerList = new();
 
     public override void OnEnable()
     {
@@ -19,12 +23,28 @@ public class PlayerListManager : MonoBehaviourPunCallbacks
         foreach (Transform child in playerListParent)
             Destroy(child.gameObject);
 
+        playerList.Clear();
+
         foreach (Player p in PhotonNetwork.PlayerList)
         {
             GameObject entryObj = Instantiate(playerEntryPrefab, playerListParent);
             PlayerListEntryUI entryUI = entryObj.GetComponent<PlayerListEntryUI>();
-            bool isLocal = p == PhotonNetwork.LocalPlayer;
-            entryUI.SetPlayer(p, isLocal);
+            entryUI.SetPlayer(p);
+            playerList.Add(p, entryUI);
+        }
+    }
+
+    public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
+    {
+        base.OnPlayerPropertiesUpdate(targetPlayer, changedProps);
+
+        if (changedProps.ContainsKey("Ready"))
+        {
+            if (playerList.ContainsKey(targetPlayer))
+            {
+                bool notReady = (targetPlayer.CustomProperties.TryGetValue("Ready", out object readyObj) && (bool)readyObj);
+                playerList[targetPlayer].SetPlayerReady(notReady);
+            }
         }
     }
 

@@ -10,7 +10,5 @@ public class ChatMessageUI : MonoBehaviour
     {
         senderText.text = sender;
         messageText.text = message;
-
-        senderText.color = isLocalPlayer ? Color.green : Color.red;
     }
 }

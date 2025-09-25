@@ -7,16 +7,16 @@ using UnityEngine.UI;
 
 public class PlayerScoreListEntryUI : MonoBehaviour
 {
-    [SerializeField] private Image character;
+    [SerializeField] private UISpriteAnimator characterImg;
     [SerializeField] private TMP_Text nickname;
     [SerializeField] private TMP_Text score;
-    [SerializeField] private List<Sprite> characterSprites;
+    [SerializeField] private List<DisplayFrames> characterSprites;
 
     public void SetData(Player player, int currentScore)
     {
         if (player.CustomProperties.TryGetValue("characterIndex", out object index))
         {
-            character.sprite = characterSprites[(int)index];
+            characterImg.frames = characterSprites[(int)index].sprites;
         }
 
         nickname.text = player.NickName;

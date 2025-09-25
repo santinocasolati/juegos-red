@@ -7,19 +7,24 @@ using UnityEngine.UI;
 
 public class PlayerListEntryUI : MonoBehaviour
 {
-    [SerializeField] private List<Sprite> characterSprites;
+    [SerializeField] private List<DisplayFrames> characterSprites;
     [SerializeField] private TMP_Text playerNameText;
-    [SerializeField] private Image playerCharacterImage;
+    [SerializeField] private UISpriteAnimator characterImg;
 
-    public void SetPlayer(Player player, bool isLocalPlayer)
+    public void SetPlayer(Player player)
     {
         playerNameText.text = player.NickName;
 
-        playerNameText.color = isLocalPlayer ? Color.green : Color.red;
-
         if (player.CustomProperties.TryGetValue("characterIndex", out object index))
         {
-            playerCharacterImage.sprite = characterSprites[(int)index];
+            characterImg.frames = characterSprites[(int)index].sprites;
         }
+
+        playerNameText.color = Color.red;
+    }
+
+    public void SetPlayerReady(bool isReady)
+    {
+        playerNameText.color = isReady ? Color.green : Color.red;
     }
 }
