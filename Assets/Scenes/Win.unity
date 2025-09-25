@@ -1382,7 +1382,10 @@ MonoBehaviour:
   character: {fileID: 1435527537720329508}
   nickname: {fileID: 1435527539152787184}
   menuScene: MainMenu
-  characterSprites: []
+  characterSprites:
+  - {fileID: 21300000, guid: 70632ddfe8e71b04b8f90ef7e29a9e98, type: 3}
+  - {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
+  - {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
 --- !u!1 &1435527539152787086
 GameObject:
   m_ObjectHideFlags: 0

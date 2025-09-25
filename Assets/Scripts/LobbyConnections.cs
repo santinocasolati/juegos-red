@@ -20,13 +20,17 @@ public class LobbyConnections : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         base.OnConnectedToMaster();
+
+        if (GameData.Instance)
+            GameData.Instance.ClearPlayers();
+
         JoinOrCreateRoom();
     }
 
     public override void OnDisconnected(DisconnectCause cause)
     {
         base.OnDisconnected(cause);
-        Debug.LogError("Disconnected from Photon: " + cause);
+        Debug.Log("Disconnected from Photon: " + cause);
     }
 
     public void OnConnectButton()
@@ -66,6 +70,11 @@ public class LobbyConnections : MonoBehaviourPunCallbacks
 
         ServiceLocator.Instance.AccessService<UIPagesService>().ChangePage("room_lobby");
         loadingScreen.SetActive(false);
+
+        foreach (Player p in PhotonNetwork.PlayerList)
+        {
+            GameData.Instance.RegisterPlayer(p);
+        }
     }
 
     public override void OnLeftRoom()
@@ -74,6 +83,20 @@ public class LobbyConnections : MonoBehaviourPunCallbacks
         Debug.Log("Left Room");
 
         ServiceLocator.Instance.AccessService<UIPagesService>().ChangePage("enter_room");
+    }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        base.OnPlayerEnteredRoom(newPlayer);
+
+        GameData.Instance.RegisterPlayer(newPlayer);
+    }
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        base.OnPlayerLeftRoom(otherPlayer);
+
+        GameData.Instance.UnregisterPlayer(otherPlayer);
     }
 
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
@@ -90,7 +113,7 @@ public class LobbyConnections : MonoBehaviourPunCallbacks
 
     private void CheckAllReady()
     {
-        //if (PhotonNetwork.PlayerList.Length <= 1) return;
+        if (PhotonNetwork.PlayerList.Length <= 1) return;
 
         foreach (Player p in PhotonNetwork.PlayerList)
         {
@@ -100,7 +123,6 @@ public class LobbyConnections : MonoBehaviourPunCallbacks
             }
         }
 
-        GameData.Instance.InitializeScores();
         PhotonNetwork.LoadLevel(sceneToLoad);
     }
 }

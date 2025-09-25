@@ -83,10 +83,24 @@ public class PlayerControls : MonoBehaviourPun
 
     private void HandleFlip()
     {
-        if (moveInput > 0.01f)
+        Vector3 currentScale = spriteContainer.localScale;
+
+        if (moveInput > 0.01f && currentScale.x < 0)
+        {
             spriteContainer.localScale = new Vector3(1, 1, 1);
-        else if (moveInput < -0.01f)
+            photonView.RPC("RPC_FlipSprite", RpcTarget.Others, 1f);
+        }
+        else if (moveInput < -0.01f && currentScale.x > 0)
+        {
             spriteContainer.localScale = new Vector3(-1, 1, 1);
+            photonView.RPC("RPC_FlipSprite", RpcTarget.Others, -1f);
+        }
+    }
+
+    [PunRPC]
+    private void RPC_FlipSprite(float direction)
+    {
+        spriteContainer.localScale = new Vector3(direction, 1, 1);
     }
 
     public void OnJump(InputAction.CallbackContext context)

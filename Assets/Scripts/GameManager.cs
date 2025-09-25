@@ -9,16 +9,23 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
+    public static GameManager Instance;
+
     [SerializeField] private string playerPrefabName;
     [SerializeField] private TMP_Text countdownText;
     [SerializeField] private List<Transform> spawnPoints;
     [SerializeField] private string scoringScene = "Scoring";
 
     protected List<GameObject> playerInstances = new();
-    protected bool gameStarted = false;
+    [HideInInspector] public bool gameStarted = false;
 
     public UnityEvent OnStart;
     public UnityEvent OnEnd;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -30,7 +37,8 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private void SpawnPlayer()
     {
-        Transform spawn = spawnPoints[PhotonNetwork.LocalPlayer.ActorNumber % spawnPoints.Count];
+        int playerIndex = Array.IndexOf(PhotonNetwork.PlayerList, PhotonNetwork.LocalPlayer);
+        Transform spawn = spawnPoints[playerIndex];
 
         playerInstances.Add(PhotonNetwork.Instantiate(playerPrefabName, spawn.position, spawn.rotation));
     }
@@ -99,11 +107,19 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    private void AnnounceWinner(Player winner)
+    protected void RPC_AnnounceWinner(int winnerActorNumber)
     {
         StopGame();
 
+        Player winner = PhotonNetwork.CurrentRoom.GetPlayer(winnerActorNumber);
         GameData.Instance.AddScore(winner, 1);
+
+        StartCoroutine(ChangeScene());
+    }
+
+    private IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(1);
 
         PhotonNetwork.LoadLevel(scoringScene);
     }

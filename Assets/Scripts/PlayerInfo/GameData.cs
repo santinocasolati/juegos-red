@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class GameData : MonoBehaviourPun
+public class GameData : MonoBehaviour
 {
     public static GameData Instance;
 
@@ -26,15 +26,25 @@ public class GameData : MonoBehaviourPun
         DontDestroyOnLoad(gameObject);
     }
 
-    public void InitializeScores()
+    public void ClearPlayers()
     {
         scores.Clear();
+    }
 
-        foreach (Player p in PhotonNetwork.PlayerList)
-        {
-            if (!scores.ContainsKey(p))
-                scores.Add(p, 0);
-        }
+    public void RegisterPlayer(Player p)
+    {
+        Debug.Log("Register " + p.NickName);
+
+        if (!scores.ContainsKey(p))
+            scores.Add(p, 0);
+    }
+
+    public void UnregisterPlayer(Player p)
+    {
+        Debug.Log("Unregister " + p.NickName);
+
+        if (scores.ContainsKey(p))
+            scores.Remove(p);
     }
 
     public void AddScore(Player p, int points)

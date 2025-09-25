@@ -46,6 +46,9 @@ MonoBehaviour:
   - RPC_SpinToValue
   - AnnounceWinner
   - PlayerDeath
+  - RPC_AnnounceWinner
+  - RPC_PlayerDeath
+  - RPC_FlipSprite
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

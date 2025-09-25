@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class PlayersHealth : MonoBehaviourPun
 {
-    private int maxHealth;
-    private int currentHealth;
+    private int maxHealth = 100;
+    private int currentHealth = 100;
 
     public Action<Player> OnDeath;
 
@@ -20,18 +20,26 @@ public class PlayersHealth : MonoBehaviourPun
 
     public void Damage(int amount)
     {
+        if (!GameManager.Instance.gameStarted) return;
+
         currentHealth = Mathf.Clamp(currentHealth - amount, 0, maxHealth);
 
         if (!photonView.IsMine) return;
 
         if (currentHealth <= 0)
-            photonView.RPC("PlayerDeath", RpcTarget.All);
+            photonView.RPC("RPC_PlayerDeath", RpcTarget.AllBuffered);
     }
 
     [PunRPC]
-    private void PlayerDeath()
+    private void RPC_PlayerDeath()
     {
         OnDeath?.Invoke(photonView.Owner);
-        Destroy(gameObject);
+
+        if (gameObject == null) return;
+
+        if (photonView.IsMine)
+        {
+            PhotonNetwork.Destroy(gameObject);
+        }
     }
 }

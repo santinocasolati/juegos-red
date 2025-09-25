@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 5608827582572690168}
   - component: {fileID: 5608827582572690170}
   - component: {fileID: 5608827582572690169}
+  - component: {fileID: 826211261653654220}
   m_Layer: 5
   m_Name: Score List Entry
   m_TagString: Untagged
@@ -155,6 +156,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &826211261653654220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608827582572690175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 993f10b31ca94334e86c86fa9f3be52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 5608827581959908968}
+  nickname: {fileID: 5608827583723519420}
+  score: {fileID: 5608827583327238788}
+  characterSprites:
+  - {fileID: 21300000, guid: 70632ddfe8e71b04b8f90ef7e29a9e98, type: 3}
+  - {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
+  - {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
 --- !u!1 &5608827583327238794
 GameObject:
   m_ObjectHideFlags: 0

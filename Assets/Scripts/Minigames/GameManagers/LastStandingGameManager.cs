@@ -33,7 +33,8 @@ public class LastStandingGameManager : GameManager
 
         if (alivePlayers.Count <= 1)
         {
-            photonView.RPC("AnnounceWinner", RpcTarget.All, alivePlayers[0]);
+            int winnerActorNumber = alivePlayers[0].ActorNumber;
+            photonView.RPC("RPC_AnnounceWinner", RpcTarget.All, winnerActorNumber);
         }
     }
 }
