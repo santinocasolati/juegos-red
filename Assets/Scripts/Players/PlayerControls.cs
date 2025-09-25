@@ -15,6 +15,11 @@ public class PlayerControls : MonoBehaviourPun
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform headCheck;
+    [SerializeField] private float headRadius = 0.2f;
+    [SerializeField] private Transform leftCheck;
+    [SerializeField] private Transform rightCheck;
+    [SerializeField] private Vector2 wallSize;
 
     [Header("UI")]
     [SerializeField] private TMP_Text nameText;
@@ -22,6 +27,8 @@ public class PlayerControls : MonoBehaviourPun
     private float moveInput;
     private float verticalVelocity;
     private bool isGrounded = true;
+    private bool hitLeftWall = false;
+    private bool hitRightWall = false;
 
     public bool canMove = false;
 
@@ -58,6 +65,14 @@ public class PlayerControls : MonoBehaviourPun
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
 
+            if (Physics2D.OverlapCircle(headCheck.position, headRadius, groundLayer) && verticalVelocity > 0)
+            {
+                verticalVelocity = 0;
+            }
+
+            hitLeftWall = Physics2D.OverlapBox(leftCheck.position, wallSize, 0f, groundLayer) != null;
+            hitRightWall = Physics2D.OverlapBox(rightCheck.position, wallSize, 0f, groundLayer) != null;
+
             if (!canMove) return;
             HandleMovement();
             HandleFlip();
@@ -68,7 +83,12 @@ public class PlayerControls : MonoBehaviourPun
     {
         moveInput = inputs.Player.Move.ReadValue<float>();
 
-        transform.position += new Vector3(moveInput * moveSpeed, 0f, 0f) * Time.deltaTime;
+        Vector3 deltaX = new Vector3(moveInput * moveSpeed * Time.deltaTime, 0f, 0f);
+
+        if ((moveInput > 0 && hitRightWall) || (moveInput < 0 && hitLeftWall))
+            deltaX.x = 0f;
+
+        transform.position += deltaX;
 
         if (!isGrounded)
             verticalVelocity += gravity * Time.deltaTime;
@@ -118,10 +138,26 @@ public class PlayerControls : MonoBehaviourPun
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.red;
+
         if (groundCheck != null)
         {
-            Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
+        }
+
+        if (headCheck != null)
+        {
+            Gizmos.DrawWireSphere(headCheck.position, headRadius);
+        }
+
+        if (leftCheck != null)
+        {
+            Gizmos.DrawWireCube(leftCheck.position, wallSize);
+        }
+
+        if (rightCheck != null)
+        {
+            Gizmos.DrawWireCube(rightCheck.position, wallSize);
         }
     }
 #endif

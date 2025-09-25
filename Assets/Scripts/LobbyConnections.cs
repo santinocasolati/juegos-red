@@ -113,7 +113,7 @@ public class LobbyConnections : MonoBehaviourPunCallbacks
 
     private void CheckAllReady()
     {
-        if (PhotonNetwork.PlayerList.Length <= 1) return;
+        //if (PhotonNetwork.PlayerList.Length <= 1) return;
 
         foreach (Player p in PhotonNetwork.PlayerList)
         {
