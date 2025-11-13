@@ -133,11 +133,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 43
-        y: 362
-        width: 262
-        height: 291
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        y: 363
+        width: 261
+        height: 289
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Sorceress Jump_1
       rect:
         serializedVersion: 2
-        x: 1379
-        y: 362
-        width: 291
-        height: 327
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 1380
+        y: 363
+        width: 289
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Sorceress Jump_2
       rect:
         serializedVersion: 2
-        x: 2807
-        y: 377
-        width: 263
-        height: 291
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 2808
+        y: 378
+        width: 261
+        height: 289
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

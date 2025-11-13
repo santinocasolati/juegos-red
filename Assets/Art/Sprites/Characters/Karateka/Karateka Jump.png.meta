@@ -132,12 +132,12 @@ TextureImporter:
       name: Karateka Jump_0
       rect:
         serializedVersion: 2
-        x: 96
-        y: 188
-        width: 357
-        height: 472
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 97
+        y: 189
+        width: 355
+        height: 470
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Karateka Jump_1
       rect:
         serializedVersion: 2
-        x: 2096
-        y: 258
-        width: 353
-        height: 544
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 2097
+        y: 259
+        width: 351
+        height: 542
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Karateka Jump_2
       rect:
         serializedVersion: 2
-        x: 4161
-        y: 188
-        width: 358
-        height: 509
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 4162
+        y: 189
+        width: 356
+        height: 506
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

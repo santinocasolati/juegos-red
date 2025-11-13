@@ -132,12 +132,12 @@ TextureImporter:
       name: Thief Walk_0
       rect:
         serializedVersion: 2
-        x: 681
-        y: 303
-        width: 247
-        height: 344
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 682
+        y: 304
+        width: 244
+        height: 341
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Thief Walk_1
       rect:
         serializedVersion: 2
-        x: 2214
-        y: 306
-        width: 248
-        height: 341
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 2216
+        y: 308
+        width: 244
+        height: 337
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Thief Walk_2
       rect:
         serializedVersion: 2
-        x: 3767
-        y: 302
-        width: 236
-        height: 341
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 3769
+        y: 304
+        width: 232
+        height: 337
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,12 +195,12 @@ TextureImporter:
       name: Thief Walk_3
       rect:
         serializedVersion: 2
-        x: 5289
-        y: 302
-        width: 248
-        height: 341
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 5291
+        y: 304
+        width: 244
+        height: 337
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: Thief Walk_4
       rect:
         serializedVersion: 2
-        x: 6823
-        y: 302
-        width: 247
-        height: 341
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 6825
+        y: 304
+        width: 244
+        height: 337
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

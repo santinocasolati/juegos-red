@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -132,12 +132,12 @@ TextureImporter:
       name: Bully Jump_0
       rect:
         serializedVersion: 2
-        x: 65
+        x: 66
         y: 385
-        width: 257
-        height: 268
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        width: 255
+        height: 267
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,11 +154,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1486
-        y: 392
-        width: 268
-        height: 279
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        y: 393
+        width: 267
+        height: 277
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Bully Jump_2
       rect:
         serializedVersion: 2
-        x: 2807
+        x: 2808
         y: 391
-        width: 257
+        width: 255
         height: 266
-      alignment: 8
-      pivot: {x: 1, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

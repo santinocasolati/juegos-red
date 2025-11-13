@@ -132,12 +132,12 @@ TextureImporter:
       name: Sage Jump_0
       rect:
         serializedVersion: 2
-        x: 17
+        x: 18
         y: 325
-        width: 335
+        width: 333
         height: 314
-      alignment: 8
-      pivot: {x: 1, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Sage Jump_1
       rect:
         serializedVersion: 2
-        x: 1403
-        y: 350
-        width: 324
-        height: 376
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 1404
+        y: 351
+        width: 322
+        height: 375
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Sage Jump_2
       rect:
         serializedVersion: 2
-        x: 2732
-        y: 323
-        width: 335
-        height: 316
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 2733
+        y: 324
+        width: 333
+        height: 315
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

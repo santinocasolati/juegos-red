@@ -132,12 +132,12 @@ TextureImporter:
       name: Sage Idle_0
       rect:
         serializedVersion: 2
-        x: 489
-        y: 213
-        width: 489
-        height: 555
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 490
+        y: 214
+        width: 486
+        height: 553
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Sage Idle_1
       rect:
         serializedVersion: 2
-        x: 2004
-        y: 210
-        width: 513
-        height: 556
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 2005
+        y: 212
+        width: 510
+        height: 553
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Sage Idle_2
       rect:
         serializedVersion: 2
-        x: 3070
-        y: 262
-        width: 7
-        height: 70
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 3071
+        y: 263
+        width: 5
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,12 +195,12 @@ TextureImporter:
       name: Sage Idle_3
       rect:
         serializedVersion: 2
-        x: 3536
-        y: 213
-        width: 517
-        height: 555
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 3537
+        y: 214
+        width: 515
+        height: 553
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

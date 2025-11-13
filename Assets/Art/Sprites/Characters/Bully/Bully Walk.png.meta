@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -132,12 +132,12 @@ TextureImporter:
       name: Bully Walk_0
       rect:
         serializedVersion: 2
-        x: 677
-        y: 283
-        width: 244
-        height: 357
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 679
+        y: 285
+        width: 240
+        height: 353
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Bully Walk_1
       rect:
         serializedVersion: 2
-        x: 2226
-        y: 280
-        width: 232
-        height: 348
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 2227
+        y: 281
+        width: 229
+        height: 345
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Bully Walk_2
       rect:
         serializedVersion: 2
-        x: 3756
-        y: 283
-        width: 236
-        height: 353
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 3757
+        y: 285
+        width: 233
+        height: 349
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,12 +195,12 @@ TextureImporter:
       name: Bully Walk_3
       rect:
         serializedVersion: 2
-        x: 5297
-        y: 287
-        width: 236
-        height: 356
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 5299
+        y: 289
+        width: 232
+        height: 352
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: Bully Walk_4
       rect:
         serializedVersion: 2
-        x: 6823
+        x: 6825
         y: 285
-        width: 255
-        height: 347
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        width: 251
+        height: 345
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

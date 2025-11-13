@@ -132,12 +132,12 @@ TextureImporter:
       name: Karateka Walk_0
       rect:
         serializedVersion: 2
-        x: 609
-        y: 272
-        width: 210
-        height: 416
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 611
+        y: 274
+        width: 206
+        height: 412
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Karateka Walk_1
       rect:
         serializedVersion: 2
-        x: 2132
-        y: 269
-        width: 221
-        height: 415
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 2134
+        y: 270
+        width: 217
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,11 +175,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3675
-        y: 265
-        width: 208
-        height: 416
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        y: 266
+        width: 206
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,12 +195,12 @@ TextureImporter:
       name: Karateka Walk_3
       rect:
         serializedVersion: 2
-        x: 5200
-        y: 268
-        width: 220
-        height: 416
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 5201
+        y: 270
+        width: 218
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: Karateka Walk_4
       rect:
         serializedVersion: 2
-        x: 6744
-        y: 272
-        width: 199
-        height: 416
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 6746
+        y: 274
+        width: 195
+        height: 412
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

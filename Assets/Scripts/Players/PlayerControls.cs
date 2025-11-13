@@ -1,4 +1,5 @@
 using Photon.Pun;
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,6 +8,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerControls : MonoBehaviourPun
 {
+    [Header("Character Settings")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private List<RuntimeAnimatorController> animations;
+
     [Header("Movement Settings")]
     [SerializeField] private Transform spriteContainer;
     [SerializeField] private float moveSpeed = 5f;
@@ -41,6 +46,11 @@ public class PlayerControls : MonoBehaviourPun
 
         if (photonView.IsMine)
             inputs = new PlayerInputActions();
+
+        if (photonView.Owner.CustomProperties.TryGetValue("characterIndex", out object index))
+        {
+            animator.runtimeAnimatorController = animations[(int)index];
+        }
     }
 
     private void OnEnable()
@@ -65,6 +75,8 @@ public class PlayerControls : MonoBehaviourPun
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
 
+            animator.SetBool("Floating", !isGrounded);
+
             if (Physics2D.OverlapCircle(headCheck.position, headRadius, groundLayer) && verticalVelocity > 0)
             {
                 verticalVelocity = 0;
@@ -82,6 +94,8 @@ public class PlayerControls : MonoBehaviourPun
     private void HandleMovement()
     {
         moveInput = inputs.Player.Move.ReadValue<float>();
+
+        animator.SetBool("Walking", moveInput != 0);
 
         Vector3 deltaX = new Vector3(moveInput * moveSpeed * Time.deltaTime, 0f, 0f);
 

@@ -132,12 +132,12 @@ TextureImporter:
       name: Sage Walk_0
       rect:
         serializedVersion: 2
-        x: 327
-        y: 359
-        width: 370
-        height: 320
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 328
+        y: 360
+        width: 368
+        height: 318
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Sage Walk_1
       rect:
         serializedVersion: 2
-        x: 1349
-        y: 353
-        width: 374
-        height: 318
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 1350
+        y: 354
+        width: 372
+        height: 316
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Sage Walk_2
       rect:
         serializedVersion: 2
-        x: 2367
-        y: 355
-        width: 378
-        height: 322
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 2368
+        y: 356
+        width: 376
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,12 +195,12 @@ TextureImporter:
       name: Sage Walk_3
       rect:
         serializedVersion: 2
-        x: 3383
-        y: 359
-        width: 384
-        height: 322
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 3384
+        y: 360
+        width: 382
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

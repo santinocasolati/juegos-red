@@ -132,12 +132,12 @@ TextureImporter:
       name: Thief Jump_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 154
-        width: 453
-        height: 509
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 38
+        y: 155
+        width: 414
+        height: 507
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Thief Jump_1
       rect:
         serializedVersion: 2
-        x: 2114
-        y: 154
-        width: 412
-        height: 509
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 2115
+        y: 155
+        width: 409
+        height: 507
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Thief Jump_2
       rect:
         serializedVersion: 2
-        x: 4193
-        y: 170
-        width: 415
-        height: 479
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 4194
+        y: 171
+        width: 414
+        height: 477
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -132,12 +132,12 @@ TextureImporter:
       name: Sorceress Walk_0
       rect:
         serializedVersion: 2
-        x: 369
-        y: 395
-        width: 248
-        height: 260
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 370
+        y: 396
+        width: 246
+        height: 258
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Sorceress Walk_1
       rect:
         serializedVersion: 2
-        x: 1397
-        y: 397
-        width: 246
-        height: 260
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 1398
+        y: 398
+        width: 244
+        height: 258
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Sorceress Walk_2
       rect:
         serializedVersion: 2
-        x: 2417
-        y: 379
-        width: 262
-        height: 276
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 2418
+        y: 380
+        width: 260
+        height: 274
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,12 +195,12 @@ TextureImporter:
       name: Sorceress Walk_3
       rect:
         serializedVersion: 2
-        x: 3433
-        y: 381
-        width: 274
-        height: 276
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 3434
+        y: 382
+        width: 272
+        height: 274
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -132,12 +132,12 @@ TextureImporter:
       name: Karateka Idle_0
       rect:
         serializedVersion: 2
-        x: 577
-        y: 237
-        width: 398
-        height: 482
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 578
+        y: 239
+        width: 396
+        height: 479
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Karateka Idle_1
       rect:
         serializedVersion: 2
-        x: 2100
-        y: 233
-        width: 408
-        height: 481
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 2101
+        y: 234
+        width: 405
+        height: 479
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Karateka Idle_2
       rect:
         serializedVersion: 2
-        x: 3651
-        y: 244
-        width: 389
-        height: 482
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 3652
+        y: 245
+        width: 387
+        height: 480
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

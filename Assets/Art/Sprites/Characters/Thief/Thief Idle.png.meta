@@ -132,12 +132,12 @@ TextureImporter:
       name: Thief Idle_0
       rect:
         serializedVersion: 2
-        x: 338
-        y: 341
-        width: 346
-        height: 342
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 339
+        y: 342
+        width: 343
+        height: 339
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Thief Idle_1
       rect:
         serializedVersion: 2
-        x: 1342
-        y: 341
-        width: 368
-        height: 342
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 1344
+        y: 342
+        width: 364
+        height: 339
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Thief Idle_2
       rect:
         serializedVersion: 2
-        x: 2389
-        y: 341
-        width: 364
-        height: 342
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 2390
+        y: 342
+        width: 361
+        height: 339
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,12 +195,12 @@ TextureImporter:
       name: Thief Idle_3
       rect:
         serializedVersion: 2
-        x: 3411
-        y: 341
-        width: 346
-        height: 342
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 3412
+        y: 342
+        width: 343
+        height: 339
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: Thief Idle_4
       rect:
         serializedVersion: 2
-        x: 4415
-        y: 341
-        width: 364
-        height: 342
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 4417
+        y: 342
+        width: 360
+        height: 339
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: Thief Idle_5
       rect:
         serializedVersion: 2
-        x: 5458
-        y: 341
-        width: 368
-        height: 342
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 5460
+        y: 342
+        width: 364
+        height: 339
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -258,12 +258,12 @@ TextureImporter:
       name: Thief Idle_6
       rect:
         serializedVersion: 2
-        x: 6484
-        y: 341
-        width: 346
-        height: 342
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 6485
+        y: 342
+        width: 343
+        height: 339
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
