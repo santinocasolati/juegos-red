@@ -409,9 +409,9 @@ GameObject:
   - component: {fileID: 3053684919359764432}
   - component: {fileID: 7349917480271311906}
   - component: {fileID: 3166252778345147814}
-  - component: {fileID: -3669875646603230195}
   - component: {fileID: 5850384916038595694}
   - component: {fileID: 4224176018434396731}
+  - component: {fileID: 4467437321491717984}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -506,27 +506,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: -3669875646603230195}
+  - {fileID: 4467437321491717984}
   - {fileID: 963977639531941402}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-3669875646603230195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3053684919359764461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 0
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!70 &5850384916038595694
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -564,6 +548,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 5
+--- !u!114 &4467437321491717984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3053684919359764461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11c9a7a57a680e747a690d5e841de2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 1
+  childSprite: {fileID: 8247344065371733345}
 --- !u!1 &3053684919482968044
 GameObject:
   m_ObjectHideFlags: 0
