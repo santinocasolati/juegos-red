@@ -26,6 +26,12 @@ public class PlayerControls : MonoBehaviourPun
     [SerializeField] private Transform rightCheck;
     [SerializeField] private Vector2 wallSize;
 
+    [Header("Attack Settings")]
+    [SerializeField] private float attackRadius = 0.5f;
+    [SerializeField] private float attackDistance = 1f;
+    [SerializeField] private LayerMask attackLayer;
+    public bool canAttack = false;
+
     [Header("UI")]
     [SerializeField] private TMP_Text nameText;
 
@@ -59,6 +65,7 @@ public class PlayerControls : MonoBehaviourPun
 
         inputs.Player.Enable();
         inputs.Player.Jump.performed += OnJump;
+        inputs.Player.Attack.performed += OnAttack;
     }
 
     private void OnDisable()
@@ -66,6 +73,7 @@ public class PlayerControls : MonoBehaviourPun
         if (!photonView.IsMine) return;
 
         inputs.Player.Jump.performed -= OnJump;
+        inputs.Player.Attack.performed -= OnAttack;
         inputs.Player.Disable();
     }
 
@@ -139,6 +147,35 @@ public class PlayerControls : MonoBehaviourPun
             verticalVelocity = jumpForce;
             isGrounded = false;
         }
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (!photonView.IsMine) return;
+        if (!canMove) return;
+        if (!canAttack) return;
+
+        if (context.performed)
+        {
+            photonView.RPC("RPC_Attack", RpcTarget.All);
+            float direction = spriteContainer.localScale.x > 0 ? 1f : -1f;
+
+            Vector2 origin = transform.position;
+            Vector2 castDirection = new Vector2(direction, 0);
+
+            RaycastHit2D hit = Physics2D.CircleCast(origin, attackRadius, castDirection, attackDistance, attackLayer);
+
+            if (hit.collider != null)
+            {
+                hit.collider.gameObject.GetComponent<PhotonView>().RPC("RPC_HitCheese", RpcTarget.All, PhotonNetwork.LocalPlayer);
+            }
+        }
+    }
+
+    [PunRPC]
+    public void RPC_Attack()
+    {
+        animator.SetTrigger("Attack");
     }
 
 #if UNITY_EDITOR

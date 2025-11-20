@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DefaultCatalog
   m_EditorClassIdentifier: 
   minigames:
-  - {fileID: 11400000, guid: ff451e4166f6b3648af911c6445fbde8, type: 2}
+  - {fileID: 11400000, guid: 21dd268527df2854fa49c14d4c9829e9, type: 2}

@@ -38,7 +38,7 @@ public class ChildSpriteTransformView : MonoBehaviour, IPunObservable
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
 
             if (syncScale)
-                childSprite.localScale = childSprite.localScale;
+                childSprite.localScale = targetScale;
         }
     }
 

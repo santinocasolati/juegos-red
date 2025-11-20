@@ -1,7 +1,6 @@
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -79,10 +78,10 @@ public class MinigamePicker : MonoBehaviourPun
         float anglePerSegment = 360f / segmentCount;
         float startRotation = wheel.eulerAngles.z;
 
-        float segmentCenterOffset = anglePerSegment / 2f;
-
-        float endRotation = startRotation + (360f * extraSpins) + (targetIndex * anglePerSegment) - segmentCenterOffset - 90f;
-
+        float endRotation = startRotation -
+                            (360f * extraSpins) -
+                            (targetIndex * anglePerSegment) -
+                            (anglePerSegment / 2f);
         float elapsed = 0f;
 
         while (elapsed < duration)
@@ -106,5 +105,4 @@ public class MinigamePicker : MonoBehaviourPun
 
         PhotonNetwork.LoadLevel(selectedMinigame.scene);
     }
-
 }

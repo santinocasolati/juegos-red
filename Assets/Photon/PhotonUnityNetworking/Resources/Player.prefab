@@ -158,6 +158,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 2
     Name: Floating
+  - Type: 9
+    SynchronizeType: 0
+    Name: Attack
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -473,6 +476,12 @@ MonoBehaviour:
   leftCheck: {fileID: 5261786647330632422}
   rightCheck: {fileID: 2508278586265379307}
   wallSize: {x: 0.1, y: 1.7}
+  attackRadius: 0.5
+  attackDistance: 1
+  attackLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  canAttack: 0
   nameText: {fileID: 3053684918426227759}
   canMove: 0
 --- !u!114 &7349917480271311906
