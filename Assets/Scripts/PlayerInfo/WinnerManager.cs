@@ -30,6 +30,11 @@ public class WinnerManager : MonoBehaviourPun
 
         nickname.text = winner.NickName;
 
+        if (winner == PhotonNetwork.LocalPlayer)
+        {
+            WinLeaderboards.Instance.AddOneToScore();
+        }
+
         PhotonNetwork.Disconnect();
     }
 
