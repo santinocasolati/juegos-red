@@ -23,6 +23,11 @@ public class LastStandingGameManager : GameManager
         }
     }
 
+    protected override void PlayerLeft(Player p)
+    {
+        PlayerDied(p);
+    }
+
     public void PlayerDied(Player player)
     {
         if (!gameStarted) return;

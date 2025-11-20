@@ -1,4 +1,5 @@
 using LootLocker.Requests;
+using Photon.Pun.Demo.PunBasics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,7 +38,43 @@ public class WinLeaderboards : MonoBehaviour
 
             playerID = response.player_id.ToString();
             Debug.Log("Logged in as " + playerID);
+
+            FetchPlayerScore();
         });
+    }
+
+    private void FetchPlayerScore()
+    {
+        if (string.IsNullOrEmpty(playerID))
+        {
+            Debug.LogWarning("playerUlid is empty, cannot fetch leaderboard entry.");
+            currentScore = 0;
+            return;
+        }
+
+        LootLockerSDKManager.GetMemberRank(
+            leaderboardKey,
+            playerID,
+            (response) =>
+            {
+                if (!response.success)
+                {
+                    Debug.Log("No existing leaderboard entry or failed to fetch member rank. Setting currentScore = 0");
+                    currentScore = 0;
+                    return;
+                }
+                try
+                {
+                    currentScore = response.score;
+                    Debug.Log($"Fetched existing leaderboard score: {currentScore}");
+                }
+                catch (System.Exception ex)
+                {
+                    Debug.LogWarning("Couldn't parse member score from response: " + ex.Message);
+                    currentScore = 0;
+                }
+            }
+        );
     }
 
     public void AddOneToScore()

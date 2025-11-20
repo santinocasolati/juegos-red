@@ -1383,9 +1383,11 @@ MonoBehaviour:
   nickname: {fileID: 1435527539152787184}
   menuScene: MainMenu
   characterSprites:
-  - {fileID: 21300000, guid: 70632ddfe8e71b04b8f90ef7e29a9e98, type: 3}
-  - {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
-  - {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
+  - {fileID: 1857385665, guid: 572a9b5e93845b544af09a9c613032aa, type: 3}
+  - {fileID: 702533877, guid: 0e34d0c7aee0c50449a23c42665bf4db, type: 3}
+  - {fileID: 1263891441, guid: 423274b4729b94247b491918adfff50d, type: 3}
+  - {fileID: 1402311990, guid: de259a1ef9c99a04092b9e6794f792e2, type: 3}
+  - {fileID: -447112286, guid: bc2b94277b08e8a45b28618908410a02, type: 3}
 --- !u!1 &1435527539152787086
 GameObject:
   m_ObjectHideFlags: 0

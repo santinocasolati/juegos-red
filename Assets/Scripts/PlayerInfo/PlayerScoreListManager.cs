@@ -38,7 +38,14 @@ public class PlayerScoreListManager : MonoBehaviourPun
     {
         yield return new WaitForSeconds(delaySeconds);
 
-        string nextScene = GameData.Instance.CheckWin() ? winScene : nextMinigameScene;
-        PhotonNetwork.LoadLevel(nextScene);
+        if (PhotonNetwork.PlayerList.Length > 1)
+        {
+            string nextScene = GameData.Instance.CheckWin() ? winScene : nextMinigameScene;
+            PhotonNetwork.LoadLevel(nextScene);
+        }
+        else
+        {
+            PhotonNetwork.LoadLevel(winScene);
+        }   
     }
 }

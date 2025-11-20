@@ -46,4 +46,14 @@ public class ReachScoreGameManager : GameManager
         else
             OnScoresModified?.Invoke();
     }
+
+    protected override void PlayerLeft(Player p)
+    {
+        base.PlayerLeft(p);
+
+        if (PhotonNetwork.PlayerList.Length == 1)
+        {
+            photonView.RPC("RPC_AnnounceWinner", RpcTarget.All, PhotonNetwork.PlayerList[0].ActorNumber);
+        }
+    }
 }

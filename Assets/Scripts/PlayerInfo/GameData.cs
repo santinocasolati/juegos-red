@@ -72,6 +72,9 @@ public class GameData : MonoBehaviour
 
     public Player GetWinner()
     {
-        return scores.Where(kvp => kvp.Value >= pointsToWin).ToList()[0].Key;
+        if (PhotonNetwork.PlayerList.Length > 1)
+            return scores.Where(kvp => kvp.Value >= pointsToWin).ToList()[0].Key;
+        else
+            return PhotonNetwork.PlayerList[0];
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
@@ -123,4 +124,24 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         PhotonNetwork.LoadLevel(scoringScene);
     }
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        base.OnPlayerLeftRoom(otherPlayer);
+
+        if (otherPlayer.IsMasterClient)
+        {
+            PlayerPrefs.SetString("notification", "Disconnected because host left the room");
+
+            PhotonNetwork.Disconnect();
+
+            SceneManager.LoadScene("MainMenu");
+        }
+        else
+        {
+            PlayerLeft(otherPlayer);
+        }
+    }
+
+    protected virtual void PlayerLeft(Player p) { }
 }
