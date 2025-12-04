@@ -13,6 +13,9 @@ public class CheeseController : MonoBehaviourPun
     [SerializeField] private float minY;
     [SerializeField] private float maxY;
 
+    [Header("Particles")]
+    [SerializeField] private GameObject particlesGameobject;
+
     [Header("Sprites")]
     [SerializeField] private List<Sprite> availableSprites;
 
@@ -49,6 +52,8 @@ public class CheeseController : MonoBehaviourPun
     public void RPC_HitCheese(Player p)
     {
         ((ReachScoreGameManager)GameManager.Instance).AddScore(p, score);
+
+        Instantiate(particlesGameobject, transform.position, Quaternion.identity);
 
         if (PhotonNetwork.IsMasterClient)
             PhotonNetwork.Destroy(gameObject);

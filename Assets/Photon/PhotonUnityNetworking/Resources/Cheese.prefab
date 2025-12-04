@@ -154,6 +154,7 @@ MonoBehaviour:
   maxX: 9
   minY: -3
   maxY: 9.5
+  particlesGameobject: {fileID: 1794864966799569901, guid: 154333e632c6aa140865bd3c6feb21b9, type: 3}
   availableSprites:
   - {fileID: 21300000, guid: 75ef008d0c7d3854b8f141187b88acbc, type: 3}
   - {fileID: 21300000, guid: 5cd484d6362bf414d9838620c79658a9, type: 3}

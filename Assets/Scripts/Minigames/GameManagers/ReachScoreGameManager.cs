@@ -27,7 +27,9 @@ public class ReachScoreGameManager : GameManager
 
         foreach (GameObject player in playerInstances)
         {
-            player.GetComponent<PlayerControls>().canAttack = true;
+            PlayerControls controls = player.GetComponent<PlayerControls>();
+            controls.canAttack = true;
+            controls.StartLockedMovement();
         }
     }
 

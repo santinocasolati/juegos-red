@@ -36,11 +36,13 @@ public class PlayerControls : MonoBehaviourPun
     [SerializeField] private TMP_Text nameText;
 
     private float moveInput;
+    private float lastMoveInput;
     private float verticalVelocity;
     private bool isGrounded = true;
     private bool hitLeftWall = false;
     private bool hitRightWall = false;
 
+    private bool directionLocked = false;
     public bool canMove = false;
 
     private PlayerInputActions inputs;
@@ -99,18 +101,41 @@ public class PlayerControls : MonoBehaviourPun
         }
     }
 
+    public void StartLockedMovement()
+    {
+        directionLocked = true;
+        lastMoveInput = 1;
+    }
+
     private void HandleMovement()
     {
         moveInput = inputs.Player.Move.ReadValue<float>();
 
-        animator.SetBool("Walking", moveInput != 0);
+        if (moveInput != 0)
+            lastMoveInput = moveInput;
 
-        Vector3 deltaX = new Vector3(moveInput * moveSpeed * Time.deltaTime, 0f, 0f);
+        if (!directionLocked)
+        {
+            animator.SetBool("Walking", moveInput != 0);
 
-        if ((moveInput > 0 && hitRightWall) || (moveInput < 0 && hitLeftWall))
-            deltaX.x = 0f;
+            Vector3 deltaX = new Vector3(moveInput * moveSpeed * Time.deltaTime, 0f, 0f);
 
-        transform.position += deltaX;
+            if ((moveInput > 0 && hitRightWall) || (moveInput < 0 && hitLeftWall))
+                deltaX.x = 0f;
+
+            transform.position += deltaX;
+        }
+        else
+        {
+            animator.SetBool("Walking", true);
+
+            Vector3 deltaX = new Vector3(lastMoveInput * moveSpeed * Time.deltaTime, 0f, 0f);
+
+            if ((lastMoveInput > 0 && hitRightWall) || (lastMoveInput < 0 && hitLeftWall))
+                deltaX.x = 0f;
+
+            transform.position += deltaX;
+        }
 
         if (!isGrounded)
             verticalVelocity += gravity * Time.deltaTime;
